@@ -1,6 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
@@ -13,6 +14,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       appBar: AppBar(
         title: Text("Dairy Management"),
         ),
@@ -24,24 +26,25 @@ class _HomeState extends State<Home> {
               children: [
                 Text('Home Page', style: TextStyle(
                   fontSize: 40,
+                  color: Colors.yellow,
                   fontWeight: FontWeight.bold
                 ),),
 
                 SizedBox(height: 40,),
 
-                ElevatedButton(onPressed: (){}, child: Text('Milk produced today')),
+                ElevatedButton(onPressed: (){}, child: Text("Log In"),),
 
                 SizedBox(height: 40,),
 
-                ElevatedButton(onPressed: (){}, child: Text('Daily Tracker')),
+                ElevatedButton(onPressed: (){}, child: Text('Sign In')),
 
                 SizedBox(height: 40,),
 
-                ElevatedButton(onPressed: (){}, child: Text('Cow tracker')),
+                ElevatedButton(onPressed: (){}, child: Text('Add New Participant')),
 
                 SizedBox(height: 40,),
 
-                ElevatedButton(onPressed: (){}, child: Text('Income Tracker')),
+                ElevatedButton(onPressed: (){}, child: Text('Farm List')),
               ],
 
             ),
