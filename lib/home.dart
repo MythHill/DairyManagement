@@ -1,7 +1,8 @@
-import 'dart:html';
 
+
+import 'package:dairymanagement/FarmList.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
+
 
 class Home extends StatefulWidget {
   const Home({ Key? key }) : super(key: key);
@@ -32,19 +33,13 @@ class _HomeState extends State<Home> {
 
                 SizedBox(height: 40,),
 
-                ElevatedButton(onPressed: (){}, child: Text("Log In"),),
-
-                SizedBox(height: 40,),
-
-                ElevatedButton(onPressed: (){}, child: Text('Sign In')),
-
-                SizedBox(height: 40,),
-
                 ElevatedButton(onPressed: (){}, child: Text('Add New Participant')),
 
                 SizedBox(height: 40,),
 
-                ElevatedButton(onPressed: (){}, child: Text('Farm List')),
+                ElevatedButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FarmList()));
+                }, child: Text('Farm List')),
               ],
 
             ),
