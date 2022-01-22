@@ -1,8 +1,11 @@
+import 'package:dairymanagement/Controllers/LoginController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({ Key? key }) : super(key: key);
+   LoginScreen({ Key? key }) : super(key: key);
+
+  var loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -22,10 +25,9 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               width: 400,
               child: TextField(
-                controller: getController.usernameController,
-                decoration: InputDecoratoion(
-                  label: Text('User Name'),
-                  border: OutlineInputBorder(borderSide: Borderside(
+                controller: loginController.usernamecontroller,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(borderSide: BorderSide(
                     color: Colors.red)
                   )),
 
@@ -35,19 +37,17 @@ class LoginScreen extends StatelessWidget {
               SizedBox(
               width: 400,
               child: TextField(
-                controller: getController.usernameController,
-                decoration: InputDecoratoion(
-                  label: Text('Password'),
-                  border: OutlineInputBorder(borderSide: Borderside(
-                    color: Colors.red)
-                  )),
+                controller: loginController.passwordcontroller,
+                decoration: InputDecoration(
+                  border :OutlineInputBorder(borderSide: BorderSide(color: Colors.red))
+                ),
 
 
                 ),
               ),
 
               SizedBox(height: 30,),
-              InkWell(onTap: () {},
+              InkWell(onTap: loginController.login,
               child: Container(
                 height: 50,
                 width: 400,

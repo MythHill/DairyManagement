@@ -1,14 +1,20 @@
+import 'package:dairymanagement/Controllers/SignUpController.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({ Key? key }) : super(key: key);
 
+
+
   @override
   _SignUpState createState() => _SignUpState();
 }
 
+
 class _SignUpState extends State<SignUp> {
+
+  var signupController = Get.put(SignUpController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,10 +38,9 @@ class _SignUpState extends State<SignUp> {
             SizedBox(
               width: 400,
               child: TextField(
-                controller: getController.usernameController,
-                decoration: InputDecoratoion(
-                  label: Text('User Name'),
-                  border: OutlineInputBorder(borderSide: Borderside(
+                controller: signupController.usernamecontroller,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(borderSide: BorderSide(
                     color: Colors.red)
                   )),
                   ),),
@@ -43,10 +48,10 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
               width: 400,
               child: TextField(
-                controller: getController.usernameController,
-                decoration: InputDecoratoion(
-                  label: Text('Email Id'),
-                  border: OutlineInputBorder(borderSide: Borderside(
+                controller: signupController.emailcontroller,
+                decoration: InputDecoration(
+                 
+                  border: OutlineInputBorder(borderSide: BorderSide(
                     color: Colors.red)
                   )),
 
@@ -57,10 +62,10 @@ class _SignUpState extends State<SignUp> {
                   SizedBox(
               width: 400,
               child: TextField(
-                controller: getController.usernameController,
-                decoration: InputDecoratoion(
-                  label: Text('Password'),
-                  border: OutlineInputBorder(borderSide: Borderside(
+                controller: signupController.passwordcontroller,
+                decoration: InputDecoration(
+                 
+                  border: OutlineInputBorder(borderSide: BorderSide(
                     color: Colors.red)
                   )),
 
@@ -72,10 +77,10 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
               width: 400,
               child: TextField(
-                controller: getController.usernameController,
-                decoration: InputDecoratoion(
-                  label: Text(' Confirm Password'),
-                  border: OutlineInputBorder(borderSide: Borderside(
+                controller: signupController.passwordconfirmcontroller,
+                decoration: InputDecoration(
+                  
+                  border: OutlineInputBorder(borderSide: BorderSide(
                     color: Colors.red)
                   )),
 
@@ -86,7 +91,7 @@ class _SignUpState extends State<SignUp> {
               
 
               SizedBox(height: 30,),
-              InkWell(onTap: () {},
+              InkWell(onTap: signupController.SignUp,
               child: Container(
                 height: 50,
                 width: 400,
